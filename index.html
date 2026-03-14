@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devon Archer — Technical Recruiter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal: #0E7C7B;
+    --teal-light: #E1F5EE;
+    --teal-dark: #085041;
+    --navy: #0D1F2D;
+    --ink: #1A1A1A;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --bg: #FAFAF8;
+    --white: #FFFFFF;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--teal);
+    color: white !important;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--teal-dark) !important; color: white !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 60px;
+  }
+  .hero-left {
+    padding: 7rem 4rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1.5px;
+    background: var(--teal);
+  }
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--teal);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-sub strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .btn-secondary:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+
+  .hero-right {
+    background: var(--navy);
+    padding: 7rem 4rem 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.06;
+  }
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.04;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .stat-card.featured {
+    background: rgba(14,124,123,0.15);
+    border-color: rgba(14,124,123,0.35);
+    grid-column: span 2;
+  }
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 2.6rem;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-number.teal { color: #5DCAA5; }
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .stat-card.featured .stat-label { color: rgba(255,255,255,0.6); }
+  .stat-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.25rem;
+    line-height: 1.5;
+  }
+
+  /* TICKER */
+  .ticker {
+    background: var(--teal);
+    padding: 0.6rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex;
+    gap: 3rem;
+    animation: ticker 28s linear infinite;
+  }
+  .ticker-item {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+  .ticker-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+  }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTIONS */
+  section { padding: 6rem 5rem; }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 20px; height: 1.5px;
+    background: var(--teal);
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 600px;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 3.5rem;
+  }
+
+  /* ABOUT */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .about-text p strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .skill-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .skill-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--teal-dark);
+    background: var(--teal-light);
+    padding: 0.2rem 0.65rem;
+    border-radius: 4px;
+    letter-spacing: 0.01em;
+  }
+  .tag.gray {
+    color: var(--muted);
+    background: #F3F4F6;
+  }
+
+  /* CASE STUDY */
+  #work { background: var(--bg); }
+  .case-study-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .case-study-header {
+    background: var(--navy);
+    padding: 3rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-study-header::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.08;
+  }
+  .case-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(14,124,123,0.2);
+    border: 1px solid rgba(14,124,123,0.4);
+    color: #5DCAA5;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+  }
+  .case-badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #5DCAA5;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.8)} }
+  .case-title {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+  .case-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    position: relative;
+  }
+  .case-body {
+    padding: 3rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .case-section-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1rem;
+  }
+  .case-p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .case-p strong { color: var(--ink); font-weight: 500; }
+  .jd-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .jd-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .jd-check {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .jd-check svg { width: 8px; height: 8px; }
+  .case-footer {
+    padding: 1.5rem 3.5rem 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .case-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+  .case-meta strong { color: var(--ink); font-weight: 500; }
+
+  /* PROCESS */
+  #process { background: var(--white); }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .process-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .process-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+  .process-num {
+    font-family: var(--serif);
+    font-size: 3rem;
+    color: var(--teal-light);
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .process-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .process-desc {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* TESTIMONIAL / CREDIBILITY */
+  #credibility {
+    background: var(--navy);
+    color: white;
+  }
+  #credibility .section-label { color: #5DCAA5; }
+  #credibility .section-label::before { background: #5DCAA5; }
+  #credibility .section-title { color: white; max-width: 700px; }
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .cred-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.75rem;
+  }
+  .cred-role {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5DCAA5;
+    margin-bottom: 0.75rem;
+  }
+  .cred-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  .cred-desc {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.65;
+  }
+
+  /* CONTACT */
+  #contact { background: var(--bg); }
+  .contact-inner {
+    max-width: 640px;
+  }
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.2s;
+  }
+  .contact-link:hover { transform: translateY(-2px); }
+  .contact-link.primary { background: var(--teal); color: white; }
+  .contact-link.primary:hover { background: var(--teal-dark); }
+  .contact-link.secondary { background: var(--white); color: var(--ink); border: 1.5px solid var(--border); }
+  .contact-link.secondary:hover { border-color: var(--teal); color: var(--teal); }
+  .contact-detail {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 2.5rem;
+    line-height: 1.6;
+  }
+  .contact-detail a { color: var(--teal); text-decoration: none; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 2rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-copy {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* HEADSHOT */
+  .headshot-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+  .headshot {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 3px var(--teal);
+    display: block;
+  }
+  .headshot-badge {
+    position: absolute;
+    bottom: 2px; right: 2px;
+    width: 20px; height: 20px;
+    background: var(--teal);
+    border-radius: 50%;
+    border: 2px solid var(--bg);
+  }
+
+  /* ABOUT PHOTO */
+  .about-photo-col {
+    flex-shrink: 0;
+  }
+  .about-photo-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    max-width: 340px;
+    position: relative;
+  }
+  .about-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .about-photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(13,31,45,0.82);
+    padding: 1.25rem 1.5rem;
+  }
+  .about-photo-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 0.15rem;
+  }
+  .about-photo-title {
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    .hero-left { padding: 5rem 2rem 4rem; }
+    section { padding: 4rem 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .cred-grid { grid-template-columns: 1fr; }
+    .case-body { grid-template-columns: 1fr; gap: 2rem; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-name">Devon Archer</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="headshot-wrap">
+      <img src="devon.png" alt="Devon Archer" class="headshot">
+      <span class="headshot-badge"></span>
+    </div>
+    <div class="hero-eyebrow">Technical Recruiter</div>
+    <h1 class="hero-headline">
+      I build recruiting<br>
+      systems, not just<br>
+      <em>pipelines.</em>
+    </h1>
+    <p class="hero-sub">
+      Full-cycle technical recruiter specializing in <strong>engineering, product, and AI-adjacent roles</strong> at high-growth startups. I bring structure, speed, and evidence-based decisions to every search.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        See my work
+      </a>
+      <a href="https://figma.com/make/VrL3X4hAiQW2e3pZn0cXV9/Ascertain-Recruiting-OS" target="_blank" class="btn-secondary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 9H9M15 15H9"/></svg>
+        View prototype
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat-card featured">
+        <div class="stat-number teal">50+</div>
+        <div class="stat-label">People placed in new roles</div>
+        <div class="stat-desc">Across recruiting, interviewing coaching, and hiring support — including 3 full-cycle sole-recruiter searches at Inventive, Zapier, and a Series A AI startup</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Candidate ghosting</div>
+        <div class="stat-desc">Across every closed search</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number teal">100%</div>
+        <div class="stat-label">Offer acceptance rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">32</div>
+        <div class="stat-label">Screen prototype built pre-interview</div>
+        <div class="stat-desc">Built before day one</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number teal">4+</div>
+        <div class="stat-label">Years full-cycle recruiting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Full-cycle recruiting<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Greenhouse · Ashby · LinkedIn Recruiter<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Technical fluency across AI/ML, cloud infrastructure, and software engineering<span class="ticker-dot"></span></span>
+    <span class="ticker-item">50+ people placed in new roles<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Hiring manager partnership<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Diversity & inclusion by design<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Pipeline tracking · SLA frameworks · intake workflows<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Remote-first · async-native<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Full-cycle recruiting<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Greenhouse · Ashby · LinkedIn Recruiter<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Technical fluency across AI/ML, cloud infrastructure, and software engineering<span class="ticker-dot"></span></span>
+    <span class="ticker-item">50+ people placed in new roles<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Hiring manager partnership<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Diversity & inclusion by design<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Pipeline tracking · SLA frameworks · intake workflows<span class="ticker-dot"></span></span>
+    <span class="ticker-item">Remote-first · async-native<span class="ticker-dot"></span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-photo-col fade-in">
+      <div class="about-photo-wrap">
+        <img src="devon.png" alt="Devon Archer" class="about-photo">
+        <div class="about-photo-caption">
+          <div class="about-photo-name">Devon Archer</div>
+          <div class="about-photo-title">Technical Recruiter · Eagle Mountain, UT · Remote</div>
+        </div>
+      </div>
+    </div>
+    <div>
+    <div class="about-text fade-in">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Recruiting built on systems, not spreadsheets.</h2>
+      <p>I'm a full-cycle technical recruiter based in Eagle Mountain, Utah. I've spent the past four years running end-to-end searches across engineering, executive, product, sales, and operations roles — from intake call through signed offer — at high-growth startups and early-stage companies.</p>
+      <p>My background in <strong>UX design and operational systems thinking</strong> means I approach every search the way a product manager approaches a release: define the bar, build the infrastructure, measure what matters, and iterate. I don't just fill reqs — I build the systems that make hiring <strong>repeatable, scalable, and defensible</strong>.</p>
+      <p>I work entirely remotely and operate with the async discipline and proactive communication that distributed teams depend on. I manage multiple concurrent searches without needing hand-holding, and I move searches forward through organized follow-through, not recurring status meetings.</p>
+    </div>
+    <div class="skills-list fade-in">
+      <div class="skill-row">
+        <div class="skill-name">ATS & Platforms</div>
+        <div class="skill-tags">
+          <span class="tag">Greenhouse</span>
+          <span class="tag">Ashby</span>
+          <span class="tag">LinkedIn Recruiter</span>
+          <span class="tag">G-Suite</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">Recruiting Competencies</div>
+        <div class="skill-tags">
+          <span class="tag">Full lifecycle recruiting</span>
+          <span class="tag">Technical roles</span>
+          <span class="tag">Structured intake</span>
+          <span class="tag">Interviewer calibration</span>
+          <span class="tag">Offer management</span>
+          <span class="tag">Closing</span>
+          <span class="tag">Onboarding</span>
+          <span class="tag">D&I hiring</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">Technical Fluency</div>
+        <div class="skill-tags">
+          <span class="tag">AI / ML infrastructure</span>
+          <span class="tag">GPU compute</span>
+          <span class="tag">Cloud / AWS</span>
+          <span class="tag">TypeScript / React</span>
+          <span class="tag">Node / Python</span>
+          <span class="tag">Distributed systems</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-name">Operational Systems</div>
+        <div class="skill-tags">
+          <span class="tag gray">Pipeline tracking</span>
+          <span class="tag gray">SLA frameworks</span>
+          <span class="tag gray">Stakeholder reporting</span>
+          <span class="tag gray">Playbook development</span>
+          <span class="tag gray">Candidate experience design</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="work">
+  <div class="section-label fade-in">Featured work</div>
+  <h2 class="section-title fade-in">Built before the first interview.</h2>
+  <p class="section-sub fade-in">When I apply to a role I care about, I don't just send a resume. I build the thing I'd build on day one.</p>
+
+  <div class="case-study-card fade-in">
+    <div class="case-study-header">
+      <div class="case-badge">
+        <span class="case-badge-dot"></span>
+        Prototype · Recruiting OS
+      </div>
+      <h3 class="case-title">A working recruiting OS — built pre-application</h3>
+      <p class="case-subtitle">32-screen prototype of the recruiting infrastructure I'd build on day one · Figma Make · Built March 2026</p>
+    </div>
+    <div class="case-body">
+      <div>
+        <div class="case-section-title">What I built</div>
+        <p class="case-p">Before applying, I study how a company actually works — their product, their engineering stack, their growth stage, their hiring challenges. Then I build a working prototype of the recruiting system I'd run on day one.</p>
+        <p class="case-p">The prototype covers <strong>full-cycle pipeline management</strong>, Greenhouse/Ashby ATS integration, hiring manager intake frameworks, SLA rules, calibration tracking, candidate experience systems, and a decision log built on evidence-based evaluation.</p>
+        <p class="case-p">Every screen maps to a specific recruiting problem. It's not a concept — it's a working system that shows how I think about building recruiting infrastructure from scratch.</p>
+      </div>
+      <div>
+        <div class="case-section-title">What the prototype covers</div>
+        <ul class="jd-list">
+          <li>
+            <span class="jd-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Full lifecycle recruiting — sourcing through onboarding
+          </li>
+          <li>
+            <span class="jd-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Greenhouse & Ashby ATS — pipeline tracking, SLA alerts, data integrity
+          </li>
+          <li>
+            <span class="jd-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Hiring manager partnership — intake frameworks, HM view, weekly brief
+          </li>
+          <li>
+            <span class="jd-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Interviewer calibration — rubrics, score variance tracking, playbooks
+          </li>
+          <li>
+            <span class="jd-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Candidate experience — structured, no ghosting, evidence-based decisions
+          </li>
+          <li>
+            <span class="jd-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Sourcing strategy — GitHub outreach, AI-assisted sourcing, diverse pipelines
+          </li>
+          <li>
+            <span class="jd-check"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+            Hiring ROI — cost per hire, time to fill, offer acceptance metrics
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-footer">
+      <div class="case-meta">
+        Built in <strong>Figma Make</strong> · <strong>32 screens</strong> · Full prototype with interactive flows
+      </div>
+      <a href="https://figma.com/make/VrL3X4hAiQW2e3pZn0cXV9/Ascertain-Recruiting-OS" target="_blank" class="btn-primary">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Open prototype
+      </a>
+    </div>
+  </div>
+
+  <!-- Second case study: JobGhost -->
+  <div class="case-study-card fade-in">
+    <div class="case-study-header" style="background:#1A1A1A;">
+      <div class="case-badge" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);">
+        Full-cycle recruiting · JobGhost
+      </div>
+      <h3 class="case-title">50+ people placed · built from zero</h3>
+      <p class="case-subtitle">Co-Founder · Full-cycle recruiting across engineering, executive, and people leadership · Aug 2025 – Present</p>
+    </div>
+    <div class="case-body">
+      <div>
+        <div class="case-section-title">What I ran</div>
+        <p class="case-p">Helped <strong>50+ people</strong> land new roles across recruiting, interview coaching, and direct hiring support. This includes three full-cycle sole-recruiter searches: an <strong>Engineer at Inventive</strong>, an <strong>executive placement at Zapier</strong>, and <strong>Head of People at a Series A AI startup</strong> in San Francisco — all intake through signed offer.</p>
+        <p class="case-p">Built recruiting infrastructure from scratch before running a single search: stage-based pipeline tracking, SLA rules, candidate communication cadences, and structured intake frameworks. Zero candidate ghosting across every search.</p>
+      </div>
+      <div>
+        <div class="case-section-title">How I did it</div>
+        <p class="case-p">Every search started with a structured intake call to define the bar before sourcing began — eliminating mid-search pivots and reducing time-to-fill. Sourcing was multi-channel: LinkedIn, GitHub for technical roles, and warm network activation. Outreach sequences were iterated based on reply rate data.</p>
+        <p class="case-p">Hiring managers received pipeline dashboards showing stage conversion and search velocity without needing status calls. Candidates received same-day communication at every stage transition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label fade-in">How I work</div>
+  <h2 class="section-title fade-in">Full lifecycle, every time.</h2>
+  <p class="section-sub fade-in">Every search I run follows the same disciplined process — from intake call to onboarding handoff.</p>
+  <div class="process-grid">
+    <div class="process-card fade-in">
+      <div class="process-num">01</div>
+      <div class="process-title">Structured intake</div>
+      <div class="process-desc">Calibrate the bar with the hiring manager before sourcing begins. Define must-haves, red flags, and what 5/5 looks like in each competency. Write a bar doc. Get it red-penned until it's right.</div>
+    </div>
+    <div class="process-card fade-in">
+      <div class="process-num">02</div>
+      <div class="process-title">Non-obvious sourcing</div>
+      <div class="process-desc">LinkedIn is table stakes. For technical roles, I go to GitHub, OSS contributions, conference talks, and community forums. The best infrastructure engineers aren't job hunting — they're committing to repos.</div>
+    </div>
+    <div class="process-card fade-in">
+      <div class="process-num">03</div>
+      <div class="process-title">Evidence-based screening</div>
+      <div class="process-desc">Structured screens tied to the rubric. Every advance decision is backed by specific evidence — not vibes. Interviewers are calibrated before the first candidate arrives so scoring means something.</div>
+    </div>
+    <div class="process-card fade-in">
+      <div class="process-num">04</div>
+      <div class="process-title">Close and onboard</div>
+      <div class="process-desc">Offer process starts before the panel debrief is done. Close brief prepared for every finalist. Candidate's motivators mapped. No surprises. Onboarding handoff documented so their first day matches the pitch.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY -->
+<!-- CERTIFICATIONS -->
+<section id="certifications" style="background:var(--white);padding-top:0;padding-bottom:3rem;">
+  <div style="border-top:1px solid var(--border);padding-top:3rem;">
+    <div class="section-label fade-in">Credentials</div>
+    <h2 class="section-title fade-in" style="margin-bottom:0.5rem;">Certifications</h2>
+    <p class="section-sub fade-in" style="margin-bottom:2rem;">Completed and in progress.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
+
+      <div class="fade-in" style="border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">Completed</div>
+        <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">Google Cybersecurity Certificate</div>
+        <div style="font-size:0.8rem;color:var(--muted);">Coursera · Google</div>
+      </div>
+
+      <div class="fade-in" style="border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">Completed</div>
+        <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">Graphic Design Certificate</div>
+        <div style="font-size:0.8rem;color:var(--muted);">California Institute of the Arts</div>
+      </div>
+
+      <div class="fade-in" style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
+        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C47D0E;margin-bottom:0.5rem;">In progress</div>
+        <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">AIRS Certified Internet Recruiter (CIR)</div>
+        <div style="font-size:0.8rem;color:var(--muted);">AIRS · Advanced sourcing techniques</div>
+      </div>
+
+      <div class="fade-in" style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
+        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C47D0E;margin-bottom:0.5rem;">In progress</div>
+        <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">LinkedIn Recruiter Certification</div>
+        <div style="font-size:0.8rem;color:var(--muted);">LinkedIn Learning · Free with Premium</div>
+      </div>
+
+      <div class="fade-in" style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
+        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C47D0E;margin-bottom:0.5rem;">In progress</div>
+        <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">Diversity & Inclusion in Recruiting</div>
+        <div style="font-size:0.8rem;color:var(--muted);">SHRM · eLearning course</div>
+      </div>
+
+      <div class="fade-in" style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
+        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C47D0E;margin-bottom:0.5rem;">In progress</div>
+        <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">Greenhouse Recruiting Certification</div>
+        <div style="font-size:0.8rem;color:var(--muted);">Greenhouse Academy · Free</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="credibility">
+  <div class="section-label">Track record</div>
+  <h2 class="section-title">What I bring to a recruiting team.</h2>
+  <p class="section-sub" style="color:rgba(255,255,255,0.5);margin-bottom:3rem;">Not a list of tools I've used — a description of how I actually work.</p>
+  <div class="cred-grid">
+    <div class="cred-card fade-in">
+      <div class="cred-role">Track record</div>
+      <div class="cred-title">50+ people placed. Zero ghosting.</div>
+      <div class="cred-desc">Helped over 50 people land new roles across recruiting, interview coaching, and direct hiring support. In every full-cycle search run as sole recruiter, zero candidates went dark — because they always know where they stand.</div>
+    </div>
+    <div class="cred-card fade-in">
+      <div class="cred-role">Technical depth</div>
+      <div class="cred-title">Fluent in the stack I'm hiring for</div>
+      <div class="cred-desc">I can discuss distributed systems, GPU compute, IaC, and AI/ML pipelines with the engineers I recruit and the engineering leaders I partner with. No translation layer needed.</div>
+    </div>
+    <div class="cred-card fade-in">
+      <div class="cred-role">System building</div>
+      <div class="cred-title">Built recruiting infrastructure from zero — twice</div>
+      <div class="cred-desc">No playbook, no team, no existing process. Intake frameworks, pipeline tracking, SLA rules, interviewer calibration, candidate communication cadences — built from scratch and documented to scale.</div>
+    </div>
+    <div class="cred-card fade-in">
+      <div class="cred-role">Hiring manager partnership</div>
+      <div class="cred-title">Advisors, not order-takers</div>
+      <div class="cred-desc">I push back when a req is under-defined. I surface market data when comp expectations are off. I bring hiring managers weekly pipeline briefs before they ask. I run the search — they make decisions.</div>
+    </div>
+    <div class="cred-card fade-in">
+      <div class="cred-role">Diversity & inclusion</div>
+      <div class="cred-title">D&I as sourcing design, not checkbox</div>
+      <div class="cred-desc">Diverse pipelines come from non-obvious sourcing channels, structured evaluation criteria, and HM calibration sessions that surface bias before it affects decisions. Built into every search from day one.</div>
+    </div>
+    <div class="cred-card fade-in">
+      <div class="cred-role">Remote-first</div>
+      <div class="cred-title">Async by default, proactive by habit</div>
+      <div class="cred-desc">I don't need a manager to know what to do. Pipeline is documented. Stakeholders have visibility. Searches move forward without requiring recurring syncs. I operate at the pace the role demands.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner fade-in">
+    <div class="section-label">Get in touch</div>
+    <h2 class="section-title">Let's talk about your hiring needs.</h2>
+    <p class="section-sub">Whether you have a role open or just want to explore fit, I'm happy to connect. I respond the same day.</p>
+    <div class="contact-links">
+      <a href="/cdn-cgi/l/email-protection#771f120e131201181937101a161e1b5914181a" class="contact-link primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="__cf_email__" data-cfemail="fe969b879a9b889190be99939f9792d09d9193">[email&#160;protected]</span>
+      </a>
+      <a href="https://calendly.com/devon-jobghost-kalp/30min" target="_blank" class="contact-link secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book 20 minutes
+      </a>
+      <a href="https://figma.com/make/VrL3X4hAiQW2e3pZn0cXV9/Ascertain-Recruiting-OS" target="_blank" class="contact-link secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View prototype
+      </a>
+    </div>
+    <div class="contact-detail">
+      Based in Eagle Mountain, Utah · Remote only ·
+      <a href="https://linkedin.com/in/devonarcher">linkedin.com/in/devonarcher</a> ·
+      Available immediately
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Devon Archer</span>
+  <span class="footer-copy">Technical Recruiter · Eagle Mountain, UT · Remote</span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout((
