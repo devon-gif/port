@@ -668,13 +668,7 @@
     letter-spacing: 0.04em;
   }
 
-  /* ANIMATIONS */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  /* ANIMATIONS — removed for compatibility */
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
@@ -786,7 +780,7 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
-    <div class="about-photo-col fade-in">
+    <div class="about-photo-col">
       <div class="about-photo-wrap">
         <img src="devon.png" alt="Devon Archer" class="about-photo">
         <div class="about-photo-caption">
@@ -796,14 +790,14 @@
       </div>
     </div>
     <div>
-    <div class="about-text fade-in">
+    <div class="about-text">
       <div class="section-label">About</div>
       <h2 class="section-title">Recruiting built on systems, not spreadsheets.</h2>
       <p>I'm a full-cycle technical recruiter based in Eagle Mountain, Utah. I've spent the past four years running end-to-end searches across engineering, executive, product, sales, and operations roles — from intake call through signed offer — at high-growth startups and early-stage companies.</p>
       <p>My background in <strong>UX design and operational systems thinking</strong> means I approach every search the way a product manager approaches a release: define the bar, build the infrastructure, measure what matters, and iterate. I don't just fill reqs — I build the systems that make hiring <strong>repeatable, scalable, and defensible</strong>.</p>
       <p>I work entirely remotely and operate with the async discipline and proactive communication that distributed teams depend on. I manage multiple concurrent searches without needing hand-holding, and I move searches forward through organized follow-through, not recurring status meetings.</p>
     </div>
-    <div class="skills-list fade-in">
+    <div class="skills-list">
       <div class="skill-row">
         <div class="skill-name">ATS & Platforms</div>
         <div class="skill-tags">
@@ -854,11 +848,11 @@
 
 <!-- CASE STUDY -->
 <section id="work">
-  <div class="section-label fade-in">Featured work</div>
-  <h2 class="section-title fade-in">Built before the first interview.</h2>
-  <p class="section-sub fade-in">When I apply to a role I care about, I don't just send a resume. I build the thing I'd build on day one.</p>
+  <div class="section-label">Featured work</div>
+  <h2 class="section-title">Built before the first interview.</h2>
+  <p class="section-sub">When I apply to a role I care about, I don't just send a resume. I build the thing I'd build on day one.</p>
 
-  <div class="case-study-card fade-in">
+  <div class="case-study-card">
     <div class="case-study-header">
       <div class="case-badge">
         <span class="case-badge-dot"></span>
@@ -920,7 +914,7 @@
   </div>
 
   <!-- Second case study: JobGhost -->
-  <div class="case-study-card fade-in">
+  <div class="case-study-card">
     <div class="case-study-header" style="background:#1A1A1A;">
       <div class="case-badge" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);">
         Full-cycle recruiting · JobGhost
@@ -945,26 +939,26 @@
 
 <!-- PROCESS -->
 <section id="process">
-  <div class="section-label fade-in">How I work</div>
-  <h2 class="section-title fade-in">Full lifecycle, every time.</h2>
-  <p class="section-sub fade-in">Every search I run follows the same disciplined process — from intake call to onboarding handoff.</p>
+  <div class="section-label">How I work</div>
+  <h2 class="section-title">Full lifecycle, every time.</h2>
+  <p class="section-sub">Every search I run follows the same disciplined process — from intake call to onboarding handoff.</p>
   <div class="process-grid">
-    <div class="process-card fade-in">
+    <div class="process-card">
       <div class="process-num">01</div>
       <div class="process-title">Structured intake</div>
       <div class="process-desc">Calibrate the bar with the hiring manager before sourcing begins. Define must-haves, red flags, and what 5/5 looks like in each competency. Write a bar doc. Get it red-penned until it's right.</div>
     </div>
-    <div class="process-card fade-in">
+    <div class="process-card">
       <div class="process-num">02</div>
       <div class="process-title">Non-obvious sourcing</div>
       <div class="process-desc">LinkedIn is table stakes. For technical roles, I go to GitHub, OSS contributions, conference talks, and community forums. The best infrastructure engineers aren't job hunting — they're committing to repos.</div>
     </div>
-    <div class="process-card fade-in">
+    <div class="process-card">
       <div class="process-num">03</div>
       <div class="process-title">Evidence-based screening</div>
       <div class="process-desc">Structured screens tied to the rubric. Every advance decision is backed by specific evidence — not vibes. Interviewers are calibrated before the first candidate arrives so scoring means something.</div>
     </div>
-    <div class="process-card fade-in">
+    <div class="process-card">
       <div class="process-num">04</div>
       <div class="process-title">Close and onboard</div>
       <div class="process-desc">Offer process starts before the panel debrief is done. Close brief prepared for every finalist. Candidate's motivators mapped. No surprises. Onboarding handoff documented so their first day matches the pitch.</div>
@@ -976,42 +970,42 @@
 <!-- CERTIFICATIONS -->
 <section id="certifications" style="background:var(--white);padding-top:0;padding-bottom:3rem;">
   <div style="border-top:1px solid var(--border);padding-top:3rem;">
-    <div class="section-label fade-in">Credentials</div>
-    <h2 class="section-title fade-in" style="margin-bottom:0.5rem;">Certifications</h2>
-    <p class="section-sub fade-in" style="margin-bottom:2rem;">Completed and in progress.</p>
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title" style="margin-bottom:0.5rem;">Certifications</h2>
+    <p class="section-sub" style="margin-bottom:2rem;">Completed and in progress.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;">
 
-      <div class="fade-in" style="border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
         <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">Completed</div>
         <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">Google Cybersecurity Certificate</div>
         <div style="font-size:0.8rem;color:var(--muted);">Coursera · Google</div>
       </div>
 
-      <div class="fade-in" style="border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+      <div style="border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
         <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;">Completed</div>
         <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">Graphic Design Certificate</div>
         <div style="font-size:0.8rem;color:var(--muted);">California Institute of the Arts</div>
       </div>
 
-      <div class="fade-in" style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
+      <div style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
         <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C47D0E;margin-bottom:0.5rem;">In progress</div>
         <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">AIRS Certified Internet Recruiter (CIR)</div>
         <div style="font-size:0.8rem;color:var(--muted);">AIRS · Advanced sourcing techniques</div>
       </div>
 
-      <div class="fade-in" style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
+      <div style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
         <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C47D0E;margin-bottom:0.5rem;">In progress</div>
         <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">LinkedIn Recruiter Certification</div>
         <div style="font-size:0.8rem;color:var(--muted);">LinkedIn Learning · Free with Premium</div>
       </div>
 
-      <div class="fade-in" style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
+      <div style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
         <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C47D0E;margin-bottom:0.5rem;">In progress</div>
         <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">Diversity & Inclusion in Recruiting</div>
         <div style="font-size:0.8rem;color:var(--muted);">SHRM · eLearning course</div>
       </div>
 
-      <div class="fade-in" style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
+      <div style="border:1px solid #FDF3DC;border-left:3px solid #C47D0E;border-radius:12px;padding:1.25rem;">
         <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C47D0E;margin-bottom:0.5rem;">In progress</div>
         <div style="font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;">Greenhouse Recruiting Certification</div>
         <div style="font-size:0.8rem;color:var(--muted);">Greenhouse Academy · Free</div>
@@ -1026,32 +1020,32 @@
   <h2 class="section-title">What I bring to a recruiting team.</h2>
   <p class="section-sub" style="color:rgba(255,255,255,0.5);margin-bottom:3rem;">Not a list of tools I've used — a description of how I actually work.</p>
   <div class="cred-grid">
-    <div class="cred-card fade-in">
+    <div class="cred-card">
       <div class="cred-role">Track record</div>
       <div class="cred-title">50+ people placed. Zero ghosting.</div>
       <div class="cred-desc">Helped over 50 people land new roles across recruiting, interview coaching, and direct hiring support. In every full-cycle search run as sole recruiter, zero candidates went dark — because they always know where they stand.</div>
     </div>
-    <div class="cred-card fade-in">
+    <div class="cred-card">
       <div class="cred-role">Technical depth</div>
       <div class="cred-title">Fluent in the stack I'm hiring for</div>
       <div class="cred-desc">I can discuss distributed systems, GPU compute, IaC, and AI/ML pipelines with the engineers I recruit and the engineering leaders I partner with. No translation layer needed.</div>
     </div>
-    <div class="cred-card fade-in">
+    <div class="cred-card">
       <div class="cred-role">System building</div>
       <div class="cred-title">Built recruiting infrastructure from zero — twice</div>
       <div class="cred-desc">No playbook, no team, no existing process. Intake frameworks, pipeline tracking, SLA rules, interviewer calibration, candidate communication cadences — built from scratch and documented to scale.</div>
     </div>
-    <div class="cred-card fade-in">
+    <div class="cred-card">
       <div class="cred-role">Hiring manager partnership</div>
       <div class="cred-title">Advisors, not order-takers</div>
       <div class="cred-desc">I push back when a req is under-defined. I surface market data when comp expectations are off. I bring hiring managers weekly pipeline briefs before they ask. I run the search — they make decisions.</div>
     </div>
-    <div class="cred-card fade-in">
+    <div class="cred-card">
       <div class="cred-role">Diversity & inclusion</div>
       <div class="cred-title">D&I as sourcing design, not checkbox</div>
       <div class="cred-desc">Diverse pipelines come from non-obvious sourcing channels, structured evaluation criteria, and HM calibration sessions that surface bias before it affects decisions. Built into every search from day one.</div>
     </div>
-    <div class="cred-card fade-in">
+    <div class="cred-card">
       <div class="cred-role">Remote-first</div>
       <div class="cred-title">Async by default, proactive by habit</div>
       <div class="cred-desc">I don't need a manager to know what to do. Pipeline is documented. Stakeholders have visibility. Searches move forward without requiring recurring syncs. I operate at the pace the role demands.</div>
@@ -1061,14 +1055,14 @@
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-inner fade-in">
+  <div class="contact-inner">
     <div class="section-label">Get in touch</div>
     <h2 class="section-title">Let's talk about your hiring needs.</h2>
     <p class="section-sub">Whether you have a role open or just want to explore fit, I'm happy to connect. I respond the same day.</p>
     <div class="contact-links">
-      <a href="/cdn-cgi/l/email-protection#771f120e131201181937101a161e1b5914181a" class="contact-link primary">
+      <a href="mailto:heydevon@gmail.com" class="contact-link primary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span class="__cf_email__" data-cfemail="fe969b879a9b889190be99939f9792d09d9193">[email&#160;protected]</span>
+        heydevon@gmail.com
       </a>
       <a href="https://calendly.com/devon-jobghost-kalp/30min" target="_blank" class="contact-link secondary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -1093,8 +1087,17 @@
   <span class="footer-copy">Technical Recruiter · Eagle Mountain, UT · Remote</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout((
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
